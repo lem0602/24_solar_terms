@@ -1,0 +1,1067 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* -------------------------------nav start--------------------------------------- */
+nav {
+    height: 60px;
+    background-color: #FF6060;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0px 0px 10px #333333;
+    border-bottom: 1px solid #333333;
+    transition: .5s;
+}
+
+.nav-left img {
+    width: 120px;
+    height: auto;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    padding: 17px 18px;
+    transition: .3s;
+}
+
+nav ul .middle a {
+    border-right: 1px solid white;
+}
+
+nav ul .middle-left a {
+    border-left: 1px solid white;
+}
+
+nav ul .left a {
+    border-radius: 0px;
+    border-left: 2px solid transparent;
+}
+
+nav ul .right a {
+    border-radius: 0px;
+    border-right: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #FF6060;
+    font-weight: 600;
+}
+
+@media screen and (min-width:768px) {
+    nav {
+        border-radius: 0px 0px 60px 60px;
+        border-right: 1px solid #333333;
+    }
+}
+
+/* ---------------------------nav-burger-right start-------------------------------- */
+
+.menu {
+    display: flex;
+    /* 隱藏選單 */
+    max-height: 0px;
+    overflow: hidden;
+    /* 取消 display: flex; */
+    display: block;
+    /* 設定絕對定位 */
+    position: absolute;
+    top: 60px;
+    /* 選單滿版呈現，也可以設定 left:0; right:0; */
+    right: 0;
+    text-align: center;
+    background: #FF6060;
+    transition: max-height .5s;
+    padding-left: 0;
+    width: 100px;
+    border-radius: 0px 0px 50px 50px;
+    box-shadow: 0px 4px 4px #333333;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    transition: all .3s;
+}
+
+.menu li a:hover {
+    background: white;
+    color: #FF6060;
+}
+
+.showmenu {
+    padding: 0.5rem;
+}
+
+.nav-burger-right i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.menu-show .menu {
+    max-height: 500px;
+}
+
+@media screen and (min-width: 768px) {
+    .nav-left img {
+        width: 150px;
+        height: auto;
+    }
+}
+
+/* -------------------------------nav end--------------------------------------- */
+
+/* --------------------------------home-main start-------------------------------- */
+.home-main {
+    background: url(../images/main-bg.jpg) no-repeat center center / cover;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.grass {
+    transform-origin: center bottom;
+    transform: scale(1, 0.6);
+    animation: grasszoom 15s linear infinite 2s;
+}
+
+@keyframes grasszoom {
+
+    0%,
+    50%,
+    100% {
+        transform-origin: center bottom;
+        transform: scale(1, 0.6);
+    }
+
+    25% {
+        transform-origin: center bottom;
+        transform: scale(1, 0.7);
+    }
+
+    75% {
+        transform-origin: center bottom;
+        transform: scale(1, 0.7);
+    }
+}
+
+.halo {
+    position: absolute;
+    bottom: 120px;
+    opacity: 0.5;
+    height: 50vh;
+    animation: halo 4s linear infinite,
+        landing 1s linear;
+}
+
+@keyframes halo {
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+@keyframes landing {
+    0% {
+        transform: translateY(-600px);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 0.5
+    }
+}
+
+.three {
+    position: absolute;
+    bottom: 70px;
+    height: 50vh;
+    animation: grow 1s linear,
+        threezoom 10s linear infinite 2s;
+}
+
+@keyframes grow {
+    0% {
+        transform: translateY(500px);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1
+    }
+}
+
+.bird {
+    position: absolute;
+    left: -10vh;
+    width: 3rem;
+    animation: fly 15s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(-10vw, 20vh) scale(1.5);
+    }
+
+    49% {
+        transform: translate(120vw, -20vh) scale(1);
+    }
+
+    51% {
+        transform: translate(120vw, 20vh) rotateY(180deg) scale(1.5)
+    }
+
+    100% {
+        transform: translate(-10vw, -20vh) rotateY(180deg) scale(1)
+    }
+}
+
+.bird-group {
+    position: absolute;
+    width: 10rem;
+    animation: fly-group 30s linear infinite;
+}
+
+@keyframes fly-group {
+    0% {
+        transform: translate(75vw, -20vh)
+    }
+
+    49% {
+        transform: translate(-75vw, -20vh)
+    }
+
+    51% {
+        transform: translate(-75vw, -20vh) rotateY(180deg)
+    }
+
+    100% {
+        transform: translate(75vw, -20vh) rotateY(180deg)
+    }
+}
+
+@keyframes threezoom {
+
+    0%,
+    50%,
+    100% {
+        transform-origin: center bottom;
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform-origin: center bottom;
+        transform: scale(1, 1.1);
+    }
+
+    75% {
+        transform-origin: center bottom;
+        transform: scale(1, 1.1);
+    }
+}
+
+.home-main h1 {
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 2px 3px 0px #333333;
+    top: 18%;
+    font-weight: 900;
+    -webkit-text-stroke: 0.7px #333333;
+    line-height: 1.6;
+    animation: fadeinout 3s, h1zoom 5s linear infinite;
+}
+
+.home-main h1 span {
+    background-color: rgba(255, 96, 96, 0.7);
+    border-radius: 50px;
+    line-height: 3;
+    font-size: 1.1rem;
+    box-shadow: #333333 2px 2px 5px;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+}
+
+@keyframes fadeinout {
+
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes h1zoom {
+
+    0%,
+    100% {
+        line-height: 1.6;
+    }
+
+    50% {
+        line-height: 2;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .halo {
+        bottom: 110px;
+        height: 60vh;
+    }
+
+    .three {
+        bottom: 50px;
+        height: 60vh;
+    }
+
+    .home-main h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-main h1 span {
+        font-size: 1.3rem;
+    }
+
+    .bird {
+        width: 4rem;
+    }
+
+    .bird-group {
+        width: 14rem;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .halo {
+        bottom: 75px;
+        height: 75vh;
+    }
+
+    .three {
+        bottom: 0px;
+        height: 75vh;
+    }
+
+    .home-main h1 {
+        writing-mode: vertical-rl;
+        font-size: 1.6rem;
+        right: 15%;
+        letter-spacing: 5px;
+    }
+
+    .home-main h1 span {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+}
+
+/* --------------------------------home-main end-------------------------------- */
+
+/* -----------------------------introduce start------------------------------------------ */
+.introduce-wrap {
+    background: url(../images/introduce-bg.jpg) no-repeat top center / cover fixed;
+    overflow: hidden;
+}
+
+.introduce h1 {
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(to right, #FF6060, transparent);
+    padding: 10px 0px 10px 15px;
+    border-radius: 30px 0px 0px 30px;
+    margin-bottom: 15px;
+    border-left: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    -webkit-text-stroke: 0.7px #333333;
+    text-shadow: 2px 3px 0px #333333;
+    font-weight: 900;
+}
+
+.introduce p,
+.introduce li {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #333333;
+}
+
+.introduce h1,
+.introduce p,
+.introduce li {
+    transition: 1s;
+}
+
+@media screen and (min-width: 576px) {
+    .introduce h1 {
+        font-size: 1.3rem;
+    }
+
+    .introduce p,
+    .introduce li {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .introduce h1 {
+        font-size: 1.5rem;
+    }
+
+    .introduce p,
+    .introduce li {
+        font-size: 1rem;
+    }
+}
+
+/* ----------------------------------loop-run start------------------------------------ */
+.loop-run {
+    position: relative;
+    width: 100%;
+    transition: 1s;
+}
+
+.sun-body {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    width: 80px;
+    animation: sunzoom 6s infinite 1.5s linear
+}
+
+.sun-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.earth-circle {
+    width: 20px;
+    position: absolute;
+    animation: animX 3s ease-in-out 0s infinite alternate,
+        animY 3s ease-in-out -1.5s infinite alternate,
+        scale 6s ease-in-out 0s infinite alternate,
+        /* animX 3s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate,
+        animY 3s cubic-bezier(0.36, 0, 0.64, 1) -1.5s infinite alternate,
+        scale 6s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate, */
+        rotation 3s infinite linear;
+}
+
+@keyframes sunzoom {
+    0% {
+        transform: scale(1) rotate(0deg)
+    }
+
+    25% {
+        transform: scale(1.2) rotate(-90deg)
+    }
+
+    50% {
+        transform: scale(1) rotate(-180deg)
+    }
+
+    75% {
+        transform: scale(1.2) rotate(-270deg)
+    }
+
+    100% {
+        transform: scale(1) rotate(-360deg)
+    }
+
+}
+
+@keyframes animX {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: 95%;
+    }
+}
+
+@keyframes animY {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: 94%;
+    }
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .sun-body {
+        width: 120px;
+    }
+
+    .earth-circle {
+        width: 26px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .earth-circle {
+        width: 35px;
+    }
+
+    .sun-bg {
+        width: 70%;
+    }
+
+    @keyframes animX {
+        0% {
+            left: 15%;
+        }
+
+        100% {
+            left: 80%;
+        }
+    }
+
+    @keyframes animY {
+        0% {
+            top: -2%;
+        }
+
+        100% {
+            top: 93%;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .sun-body {
+        width: 140px;
+    }
+
+    .earth-circle {
+        width: 50px;
+    }
+
+    .sun-bg {
+        width: 60%;
+    }
+}
+
+/* ----------------------------------loop-run end------------------------------------ */
+/* -----------------------------introduce end------------------------------------------ */
+
+
+/* --------------------------------------------design start------------------------------------- */
+.design-wrap {
+    background-color: #FFE7E7;
+    overflow: hidden;
+}
+
+.design-tittle {
+    background-color: #FF6060;
+    padding: 32px 0;
+    text-align: center;
+    transition: 1s;
+}
+
+.design-tittle h1 {
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 0.7px #333333;
+    text-shadow: 2px 3px 0px #333333;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.design-tittle span {
+    font-size: 0.7rem;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    display: inline-block;
+    border: 1px solid #333333;
+    box-shadow: 2px 3px 0px #333333;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.fa-angles-down {
+    animation: fa-angles-down .5s infinite;
+}
+
+@keyframes fa-angles-down {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.season-section,
+.season-change,
+.season-poem {
+    transition: 1.5s;
+}
+
+.season-section img {
+    width: 200px;
+    height: auto;
+}
+
+.season-change img {
+    width: 120px;
+}
+
+.season-poem {
+    background-color: white;
+    padding: 25px 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 0px #FF6060;
+    border: 1px solid #FF6060;
+}
+
+.season-poem h1 {
+    font-size: 1.3rem;
+    color: #333333;
+}
+
+.season-poem h2 {
+    font-size: 1rem;
+    border-bottom: 1px solid #FF6060;
+    padding-bottom: 10px;
+    color: #333333;
+}
+
+.season-poem p {
+    font-size: 0.9rem;
+    color: #333333;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+/* .season-card .btn {
+    background-color: #FF6060;
+    color: white;
+    border-radius: 40px;
+    padding: 5px 18px;
+    border: none;
+    transition: .3s;
+}
+
+.season-card .btn:hover {
+    color: #FF6060;
+    border: none;
+    background-color: white;
+    font-weight: 600;
+} */
+
+.camera {
+    width: 300px;
+    height: 450px;
+    transition: 1s;
+}
+
+.season-card {
+    width: 300px;
+    height: 450px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.season-card .card {
+    width: 300px;
+    height: 450px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    border: 1px solid #FF6060;
+    overflow: hidden;
+    box-shadow: 5px 5px 0px #FF6060, 22px 22px 57px 4px rgba(228, 30, 30, 0.56), 0 0 0 currentColor, 0 0 0 currentColor, 0 0 0 currentColor, 0 0 0 currentColor;
+}
+
+.season-card .back {
+    transform: rotateY(180deg);
+}
+
+.season-book{
+    transition: 1s;
+}
+
+.season-card .back h1 {
+    text-align: center;
+    color: #333333;
+}
+
+.season-book h1{
+    position: absolute;
+    transform: translateX(-55%);
+    color: white;
+    padding: 10px 20px;
+    text-shadow: 2px 3px 0px #333333;
+    font-weight: 900;
+    -webkit-text-stroke: 0.7px #333333;
+    font-size: 1.3rem;
+    background-color: #FF6060;
+    border-radius: 50px;
+    box-shadow: #333333 2px 2px 5px;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    animation: sb-h .75s infinite;
+}
+
+.season-book i{
+    transform: translateY(10%);
+}
+
+@keyframes sb-h {
+    0% {
+        transform: translateX(-55%);
+    }
+
+    100% {
+        transform: translateX(-63%);
+    }
+}
+
+.bookwrap{
+    transform: translateX(50%);
+}
+
+.camerabook {
+    overflow: hidden;
+    /* width: 337.5px;
+    height: 450px; */
+    width: 170px;
+    height: 226.6666px;
+}
+
+.page {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 170px;
+    height: 226.6666px;
+    transition: 0.6s;
+    transform-origin: left;
+    transform: rotateY(0deg);
+    position: absolute;
+    border: 1px solid #FF6060;
+    box-shadow: 5px 5px 0px #FF6060;
+}
+
+.page img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    width: 100%;
+}
+
+.page .back {
+    transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 576px) {
+    .design-tittle h1 {
+        font-size: 1.5rem;
+    }
+
+    .design-tittle span {
+        font-size: 0.9rem;
+    }
+
+    .season-poem h1, .season-book h1 {
+        font-size: 1.5rem;
+    }
+
+    .season-poem h2 {
+        font-size: 1.2rem;
+    }
+
+    .season-poem p {
+        font-size: 1rem;
+    }
+
+    .season-section img {
+        width: 350px;
+        height: auto;
+    }
+
+    .season-change img {
+        width: 180px;
+    }
+
+    .camerabook {
+        width: 260px;
+        height: 346.6666px;
+    }
+
+    .page {
+        width: 260px;
+        height: 346.6666px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .camerabook {
+        width: 350px;
+        height: 466.6666px;
+    }
+
+    .page {
+        width: 350px;
+        height: 466.6666px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .season-change img {
+        width: 150px;
+    }
+}
+
+/* --------------------------------------------design end------------------------------------- */
+
+/* --------------------------------------------product start------------------------------------- */
+.product-wrap {
+    background: url(../images/product-bg.jpg) no-repeat center top/cover;
+    height: 100vh;
+}
+
+.product-wrap .card {
+    border: 1px solid #FF6060;
+    padding: 25px 40px;
+    border-radius: 20px;
+    height: auto;
+}
+
+.product-wrap .card img {
+    border-bottom: 1px solid #FF6060;
+    padding-bottom: 12px;
+}
+
+.product-wrap h1,
+.product-wrap p {
+    color: #333333
+}
+
+.product-wrap p {
+    font-size: 0.9rem;
+}
+
+.product-wrap .product-price p {
+    color: white;
+    background-color: #FF6060;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.carousel-control-next i,
+.carousel-control-prev i {
+    color: #FF6060;
+    font-size: 3rem;
+}
+
+@media screen and (min-width: 576px) {
+    .product-wrap p {
+        font-size: 1rem;
+    }
+}
+
+/* -------------------------------------------product end------------------------------------- */
+/* --------------------------------------situation start--------------------------------------- */
+.situation-wrap {
+    background: #FF6060;
+    overflow: hidden;
+    position: relative;
+}
+
+.situation-wrap img {
+    outline: 1px solid #333333;
+    border: 5px 5px 0px #333333;
+}
+
+.m-p-g__controls-close {
+    top: 11vh;
+    right: 0;
+    padding-right: 3vw;
+    text-align: right;
+}
+
+
+/* --------------------------------------situation end--------------------------------------- */
+/* --------------------------------store start---------------------------------- */
+.store-wrap {
+    background-color: #FFE7E7;
+    overflow: hidden;
+}
+
+.store-wrap h1 {
+    color: #333333;
+    font-size: 1.3rem;
+    border-left: 5px solid #FF6060;
+    padding-left: 1rem;
+    margin-bottom: 16px;
+}
+
+.store-wrap p {
+    color: #333333;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+.modal {
+    z-index: 10000;
+}
+
+.store-menu {
+    background-color: #FF6060;
+    color: white;
+    border-radius: 40px;
+    padding: 5px 18px;
+    border: none;
+    transition: .3s;
+}
+
+.btn.focus,
+.btn:focus {
+    box-shadow: none;
+}
+
+.store-menu:hover {
+    color: #FF6060;
+    border: none;
+    background-color: white;
+    font-weight: 600;
+}
+
+.store-img img {
+    border-radius: 20px;
+    border: 1px solid #FF6060;
+    box-shadow: 5px 5px 0px #FF6060;
+}
+
+.store-wrap iframe {
+    border-radius: 20px;
+    border: 1px solid #FF6060;
+    box-shadow: 5px 5px 0px #FF6060;
+}
+
+.store-wrap h2 {
+    color: #333333;
+    font-size: 1.1rem;
+}
+
+.social-icon i {
+    color: #FF6060;
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.message-bird img {
+    transform: rotateY(180deg);
+    width: 6rem;
+}
+
+.end-bar {
+    background-color: #FFE7E7;
+}
+
+.end-bar p {
+    height: 30px;
+    background-color: #333333;
+    color: white;
+    font-size: 0.6rem;
+    line-height: 30px;
+}
+
+@media screen and (min-width: 576px) {
+    .store-wrap h1 {
+        font-size: 1.5rem;
+    }
+
+    .store-wrap h2 {
+        font-size: 1.2rem;
+    }
+
+    .store-wrap p {
+        font-size: 1rem;
+    }
+
+    .message-bird img {
+        width: 8rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .end-bar p {
+        border-radius: 30px 30px 0px 0px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .store-wrap .theme h1 {
+        border-right: 5px solid #FF6060;
+        padding-right: 1rem;
+        padding-left: 0rem;
+        border-left: 0px;
+    }
+
+    .end-bar p {
+        font-size: 0.8rem;
+    }
+}
+
+/* --------------------------------store end---------------------------------- */
+/* --------------------------------footer start---------------------------------- */
+footer a {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 96, 96, 0.7);
+    color: white;
+    text-align: center;
+    line-height: 45px;
+    font-size: 2.5em;
+    border-radius: 50%;
+    text-decoration: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: #333333 2px 2px 5px;
+    z-index: 99;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* --------------------------------footer end---------------------------------- */
